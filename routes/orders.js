@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+
 
 // GET order by ID
 router.get("/:id", async (req, res) => {
@@ -64,3 +64,8 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+
+
+
+module.exports = router;
