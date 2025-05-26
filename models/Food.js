@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const FoodSchema = new mongoose.Schema({
-  foodId: Number,
   name: String,
   description: String,
   category: String,
@@ -24,8 +22,5 @@ const FoodSchema = new mongoose.Schema({
   imageUrl: String,
   model3DUrl: String,
 });
-
-// Add auto-increment plugin
-FoodSchema.plugin(AutoIncrement, { inc_field: 'foodId' });
 
 module.exports = mongoose.model('Food', FoodSchema);
