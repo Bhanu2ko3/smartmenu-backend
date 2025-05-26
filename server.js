@@ -8,7 +8,10 @@ const orderRoutes = require('./routes/orders');
 const recommendationRoutes = require('./routes/recommendations');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://your-frontend-domain.com'], 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 app.use(express.json());
 
 // Connect to DB
