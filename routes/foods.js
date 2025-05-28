@@ -65,6 +65,17 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// GET foods by category
+router.get("/category/:category", async (req, res) => {
+  try {
+    const foods = await Food.find({ category: req.params.category });
+    if (!foods.length) return res.status(404).json({ msg: "No foods found" });
+    res.json(foods);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // // GET random food
 // router.get("/random", async (req, res) => {
 //   try {
@@ -87,16 +98,7 @@ router.delete("/:id", async (req, res) => {
 //     res.status(500).json({ error: err.message });
 //   }
 // });
-// // GET foods by category
-// router.get("/category/:category", async (req, res) => {
-//   try {
-//     const foods = await Food.find({ category: req.params.category });
-//     if (!foods.length) return res.status(404).json({ msg: "No foods found" });
-//     res.json(foods);
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
+
 // // GET foods by name
 // router.get("/name/:name", async (req, res) => {
 //   try {
