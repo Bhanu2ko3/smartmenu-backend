@@ -9,7 +9,7 @@ const recommendationRoutes = require('./routes/recommendations');
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://smartmenu-admin-frontend.vercel.app', 'https://smartmenuu.netlify.app/'], 
+    origin: ['http://localhost:3000', 'https://smartmenu-admin-frontend.vercel.app', 'https://smartmenuu.netlify.app'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 app.use(express.json());
